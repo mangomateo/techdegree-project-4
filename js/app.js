@@ -1,3 +1,3 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
+
+let phrase1 = new Phrase();
+let game1 = new Game();
