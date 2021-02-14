@@ -6,12 +6,14 @@ class Phrase {
 
     addPhraseToDisplay() {
       
-        const display = document.querySelector('#phrase');
+        const display = document.querySelector('#phrase').firstElementChild;
         const characterTest = char => {
             return /[a-z]/.test(char);
         }
         
-        let newHTML = '';    
+        let newHTML = `<ul>`;
+        // let phraseUL = `<ul>${newHTML}<ul>`;
+            
         let array = this.phrase.split('');
         array.forEach(char => {
             characterTest(char) ? 
@@ -19,6 +21,7 @@ class Phrase {
             newHTML +=  `<li class="space"> </li>`;
         });
 
+        newHTML += `</ul>`;
         phrase.innerHTML = newHTML;
         
     }
