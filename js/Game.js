@@ -18,8 +18,8 @@ class Game {
      * Selects a random phrase from the phrases array
      */ 
     getRandomPhrase() {
-        let randomNum = Math.floor(Math.random() * 5);
-        return this.phrases[randomNum];
+        let randomOneToFive = Math.floor(Math.random() * 5);
+        return this.phrases[randomOneToFive];
     }
 
     handleInteraction() {
