@@ -4,6 +4,9 @@ class Phrase {
         this.phrase = phrase;
     }
 
+    /**
+     * Converts phrase into HTML and displays in game area
+     */
     addPhraseToDisplay() {
       
         const display = document.querySelector('#phrase').firstElementChild;
@@ -12,7 +15,6 @@ class Phrase {
         }
         
         let newHTML = `<ul>`;
-        // let phraseUL = `<ul>${newHTML}<ul>`;
             
         let array = this.phrase.split('');
         array.forEach(char => {
