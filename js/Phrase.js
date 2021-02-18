@@ -1,7 +1,10 @@
 
 class Phrase {
+
     constructor(phrase) {
+
         this.phrase = phrase;
+
     }
 
     /**
@@ -14,7 +17,8 @@ class Phrase {
             return /[a-z]/.test(char);
         }
         
-        let newHTML = `<ul>`;
+        // let newHTML = `<ul>`;
+        let newHTML = '';
             
         let array = this.phrase.split('');
         array.forEach(char => {
@@ -23,16 +27,33 @@ class Phrase {
             newHTML +=  `<li class="space"> </li>`;
         });
 
-        newHTML += `</ul>`;
-        phrase.innerHTML = newHTML;
+        display.innerHTML = newHTML;
         
     }
 
-    checkLetter() {
+    /**
+     * Checks if a given letter is in this phrase
+     */
+    checkLetter(letter) {
+
+        let array = this.phrase.split('');
+        array.forEach(char => letter == char);
 
     }
 
-    showMatchedLetter() {
+     /**
+     * If letter is matched, reveals letter on display
+     */
+    showMatchedLetter(letter) {
+
+        const phraseLetters = document.querySelector('#phrase > ul').children;
+        
+        for (let i = 0; i < phraseLetters.length; i++) {
+            if (phraseLetters[i].textContent === letter) {
+                phraseLetters[i].classList.remove('hide');
+                phraseLetters[i].classList.add('show');
+            };
+        }    
 
     }
 }
