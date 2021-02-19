@@ -43,8 +43,21 @@ class Game {
 
     }
 
+    
+    /**
+     * Checks if the player has revealed all of the letters in the active phrase
+     */ 
     checkForWin() {
+        
+        let unsolvedLetters = 0;
 
+        for (let i = 0; i < phraseLetters.length; i++) {
+            phraseLetters[i].className == `hide letter ${ phraseLetters[i].textContent }` ? 
+                unsolvedLetters++ : unsolvedLetters = unsolvedLetters;
+        }
+
+        return unsolvedLetters === 0;
+        
     }
 
     gameOver() {

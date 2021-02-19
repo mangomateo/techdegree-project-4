@@ -44,9 +44,7 @@ class Phrase {
      /**
      * If letter is matched, reveals letter on display
      */
-    showMatchedLetter(letter) {
-
-        const phraseLetters = document.querySelector('#phrase > ul').children;
+    showMatchedLetter(letter) {        
         
         for (let i = 0; i < phraseLetters.length; i++) {
             if (phraseLetters[i].textContent === letter) {
