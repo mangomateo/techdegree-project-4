@@ -17,30 +17,39 @@ class Game {
      * Starts the game by choosing a random phrase and setting it up for play in the display area
      */     
     startGame() {
-
         let overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
-
     }
 
     /**
      * Selects a random phrase from the phrases array
      */ 
     getRandomPhrase() {
-        
         let randomOneToFive = Math.floor(Math.random() * 5);
         return this.phrases[randomOneToFive];
-
     }
 
-    handleInteraction() {
-        
+    handleInteraction(letter) {
+        if (this.activePhrase.checkLetter(letter)) {
+            this.activePhrase.showMatchedLetter(letter);
+        } else {
+            this.removeLife();
+        }
+        this.checkForWin();
     }
 
     removeLife() {
-
+        /* 
+        if
+            this.missed is equal to 5
+            call gameOver();
+        else
+            replace full heart img with empty heart img
+            increase this.missed by 1
+        endif
+        */
     }
 
     
@@ -48,7 +57,6 @@ class Game {
      * Checks if the player has revealed all of the letters in the active phrase
      */ 
     checkForWin() {
-        
         let unsolvedLetters = 0;
 
         for (let i = 0; i < phraseLetters.length; i++) {
@@ -57,7 +65,6 @@ class Game {
         }
 
         return unsolvedLetters === 0;
-        
     }
 
     gameOver() {

@@ -7,6 +7,5 @@ const phraseLetters = document.querySelector('#phrase > ul').children;
 startButton.addEventListener('click', () => {
     game = new Game();
     game.startGame();
-    game.checkForWin();
 });
 
