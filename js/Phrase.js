@@ -33,12 +33,10 @@ class Phrase {
 
     /**
      * Checks if a given letter is in this phrase
+     * returns boolean value
      */
     checkLetter(letter) {
-
-        let array = this.phrase.split('');
-        array.forEach(char => letter == char);
-
+        return this.phrase.includes(letter);
     }
 
      /**
