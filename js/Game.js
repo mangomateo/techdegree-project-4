@@ -17,7 +17,6 @@ class Game {
      * Starts the game by choosing a random phrase and setting it up for play in the display area
      */     
     startGame() {
-        let overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
@@ -40,16 +39,25 @@ class Game {
         this.checkForWin();
     }
 
+    /**
+     * Removes a life from the player and increases the missed property
+     * Ends the game if player has no lives left
+     */ 
     removeLife() {
-        /* 
-        if
-            this.missed is equal to 5
-            call gameOver();
-        else
-            replace full heart img with empty heart img
-            increase this.missed by 1
-        endif
-        */
+        const hearts = document.querySelector('#scoreboard > ol').children;
+        const lifeHeartHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`;
+        const lostHeartHTML = `<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">`;
+        const lifeTaker = arr => {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].innerHTML == lifeHeartHTML) {
+                    arr[i].innerHTML = lostHeartHTML;
+                    break;
+                }
+            }
+        }
+
+        this.missed++;
+        this.missed > 4 ? this.gameOver() : lifeTaker(hearts);
     }
 
     
@@ -67,7 +75,21 @@ class Game {
         return unsolvedLetters === 0;
     }
 
-    gameOver() {
+    /**
+     * Ends the game and displays a win or lose message depending on outcome
+     */
+    gameOver(gameWon) {
+        const endGameMessage = document.querySelector('#game-over-message');
 
+        overlay.style.display = 'flex';
+        overlay.classList.remove('start');
+
+        if (gameWon) {
+            endGameMessage.textContent = 'YOU WON!';
+            overlay.classList.add('win');    
+        } else {
+            endGameMessage.textContent = 'YOU LOST!';
+            overlay.classList.add('lose');
+        }
     }
 }
