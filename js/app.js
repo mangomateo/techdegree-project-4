@@ -10,3 +10,8 @@ startButton.addEventListener('click', () => {
     game.startGame();
 });
 
+letterChoices.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        game.handleInteraction(e.target);
+    }
+})

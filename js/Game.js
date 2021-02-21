@@ -30,13 +30,8 @@ class Game {
         return this.phrases[randomOneToFive];
     }
 
-    handleInteraction(letter) {
-        if (this.activePhrase.checkLetter(letter)) {
-            this.activePhrase.showMatchedLetter(letter);
-        } else {
-            this.removeLife();
-        }
-        this.checkForWin();
+    handleInteraction(button) {
+        console.log(button);
     }
 
     /**
