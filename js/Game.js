@@ -30,8 +30,22 @@ class Game {
         return this.phrases[randomOneToFive];
     }
 
+    /**
+     * Handles game logic whenever a letter is selected
+     * Updates game appropriately if a chosen letter is in the phrase or not
+     * Ends the game if win condition has been met
+     */ 
     handleInteraction(button) {
-        console.log(button);
+        button.setAttribute('disabled', true);
+        if (this.activePhrase.checkLetter(button.textContent)) {
+            button.classList.add('chosen');
+            this.activePhrase.showMatchedLetter(button.textContent);
+            this.checkForWin();
+            this.checkForWin() ? this.gameOver(true) : console.log('keep playing');
+        } else {
+            button.classList.add('wrong');
+            this.removeLife();
+        }
     }
 
     /**
