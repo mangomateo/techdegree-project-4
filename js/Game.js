@@ -4,11 +4,11 @@ class Game {
     constructor() {
 
         this.missed = 0;
-        this.phrases = [ new Phrase('hello'),
-                         new Phrase('abcde'),
-                         new Phrase('goodbye'),
-                         new Phrase('blessings'),
-                         new Phrase('welcome') ];
+        this.phrases = [ new Phrase('you go down smooth'),
+                         new Phrase('bring back my girls'),
+                         new Phrase('getting things done'),
+                         new Phrase('unchained melody'),
+                         new Phrase('ew david') ];
         this.activePhrase = null;
 
     }
@@ -94,10 +94,10 @@ class Game {
         overlay.classList.remove('start');
 
         if (gameWon) {
-            endGameMessage.textContent = 'YOU WON!';
+            endGameMessage.textContent = `YOU WON! The phrase was: '${ this.activePhrase.phrase }'`;
             overlay.classList.add('win');    
         } else {
-            endGameMessage.textContent = 'YOU LOST!';
+            endGameMessage.textContent = `YOU LOST! The phrase was: '${ this.activePhrase.phrase }'`;
             overlay.classList.add('lose');
         }
     }
