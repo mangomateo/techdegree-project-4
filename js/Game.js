@@ -41,7 +41,7 @@ class Game {
             button.classList.add('chosen');
             this.activePhrase.showMatchedLetter(button.textContent);
             this.checkForWin();
-            this.checkForWin() ? this.gameOver(true) : console.log('keep playing');
+            this.checkForWin() ? this.gameOver(true) : undefined;
         } else {
             button.classList.add('wrong');
             this.removeLife();
