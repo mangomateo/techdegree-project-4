@@ -4,11 +4,11 @@ class Game {
     constructor() {
 
         this.missed = 0;
-        this.phrases = [ new Phrase('bring back my girls'),
-                         new Phrase('welcome to the good place'),
-                         new Phrase('thats what she said'),
-                         new Phrase('what does fold in the cheese mean'),
-                         new Phrase('no you get murdered first') ];
+        this.phrases = [ new Phrase('hello'),
+                         new Phrase('abcde'),
+                         new Phrase('goodbye'),
+                         new Phrase('blessings'),
+                         new Phrase('welcome') ];
         this.activePhrase = null;
 
     }
@@ -53,7 +53,7 @@ class Game {
      * Ends the game if player has no lives left
      */ 
     removeLife() {
-        const hearts = document.querySelector('#scoreboard > ol').children;
+        // const hearts = document.querySelector('#scoreboard > ol').children;
         const lifeHeartHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`;
         const lostHeartHTML = `<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">`;
         const lifeTaker = arr => {
