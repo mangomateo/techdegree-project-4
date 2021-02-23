@@ -4,10 +4,10 @@ class Game {
     constructor() {
 
         this.missed = 0;
-        this.phrases = [ new Phrase('you go down smooth'),
+        this.phrases = [ new Phrase('warmest regards'),
                          new Phrase('bring back my girls'),
-                         new Phrase('getting things done'),
-                         new Phrase('unchained melody'),
+                         new Phrase('the crows have eyes'),
+                         new Phrase('eleganza extravanagza'),
                          new Phrase('ew david') ];
         this.activePhrase = null;
 
