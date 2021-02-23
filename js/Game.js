@@ -95,10 +95,10 @@ class Game {
 
         if (gameWon) {
             endGameMessage.textContent = `YOU WON! The phrase was: '${ this.activePhrase.phrase }'`;
-            overlay.classList.add('win');    
+            overlay.className = 'win';    
         } else {
             endGameMessage.textContent = `YOU LOST! The phrase was: '${ this.activePhrase.phrase }'`;
-            overlay.classList.add('lose');
+            overlay.className = 'lose';
         }
     }
 }
