@@ -36,16 +36,19 @@ class Game {
      * Ends the game if win condition has been met
      */ 
     handleInteraction(button) {
-        button.setAttribute('disabled', true);
-        if (this.activePhrase.checkLetter(button.textContent)) {
-            button.classList.add('chosen');
-            this.activePhrase.showMatchedLetter(button.textContent);
-            this.checkForWin();
-            this.checkForWin() ? this.gameOver(true) : undefined;
-        } else {
-            button.classList.add('wrong');
-            this.removeLife();
+        if (button.getAttribute('disabled') !== 'true') {
+            if (this.activePhrase.checkLetter(button.textContent)) {
+                button.classList.add('chosen');
+                this.activePhrase.showMatchedLetter(button.textContent);
+                this.checkForWin();
+                this.checkForWin() ? this.gameOver(true) : undefined;
+            } else {
+                button.classList.add('wrong');
+                this.removeLife();
+            }
         }
+        
+        button.setAttribute('disabled', true);
     }
 
     /**

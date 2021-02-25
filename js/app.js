@@ -31,6 +31,5 @@ letterChoices.addEventListener('click', e => {
 /**
  * Runs game logic whenever a letter is typed 
  */ 
-window.addEventListener('keydown', e => 
-    keyboardButtons.forEach(el => e.key === el.textContent ? 
-    game.handleInteraction(el) : null));
+window.addEventListener('keydown', e => keyboardButtons.forEach(el => 
+    e.key === el.textContent ? game.handleInteraction(el) : undefined));
