@@ -93,6 +93,21 @@ class Game {
         overlay.style.display = 'flex';
         overlay.classList.remove('start');
 
+        phraseContainer.innerHTML = '';
+
+        // Enable and reset classes on all keyboard buttons
+        let keyboardButtonsArr = Array.from(keyboardButtons);
+        keyboardButtonsArr.forEach(el => {
+            el.classList.remove('wrong');
+            el.classList.remove('chosen');
+            el.classList.add('key');
+            el.removeAttribute('disabled');
+        });
+
+        // Reset heart scoreboard
+        let heartsArr = Array.from(hearts);
+        heartsArr.forEach(el => el.innerHTML = `<img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30">`);
+
         if (gameWon) {
             endGameMessage.textContent = `YOU WON! The phrase was: '${ this.activePhrase.phrase }'`;
             overlay.className = 'win';    
