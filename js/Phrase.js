@@ -15,7 +15,6 @@ class Phrase {
             return /[a-z]/.test(char);
         }
         
-        // let newHTML = `<ul>`;
         let newHTML = '';
             
         let array = this.phrase.split('');
