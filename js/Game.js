@@ -7,7 +7,7 @@ class Game {
         this.phrases = [ new Phrase('warmest regards'),
                          new Phrase('bring back my girls'),
                          new Phrase('the crows have eyes'),
-                         new Phrase('eleganza extravanagza'),
+                         new Phrase('eleganza extravaganza'),
                          new Phrase('ew david') ];
         this.activePhrase = null;
 
